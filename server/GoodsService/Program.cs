@@ -36,6 +36,11 @@ void RegisterServices(IServiceCollection services)
     );
     
     services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+    services.AddCors(options => options.AddPolicy(name: "NgOrigins",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+        }));
     
     services.AddControllers();
 
@@ -52,6 +57,7 @@ void RegisterServices(IServiceCollection services)
 
 void Configure(IApplicationBuilder app)
 {
+    app.UseCors("NgOrigins");
     app.UseRouting();
     app.UseAuthentication();
     app.UseAuthorization();

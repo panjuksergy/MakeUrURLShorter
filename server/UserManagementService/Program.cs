@@ -32,6 +32,8 @@ void Configure(IApplicationBuilder app)
 {
     app.UseRouting();
 
+    app.UseCors(_ => { _.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod(); });
+
     app.UseAuthentication();
     app.UseAuthorization();
 

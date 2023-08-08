@@ -22,7 +22,7 @@ namespace IdentityService.Controllers
             _userManager = userManager;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("login")]
         public async Task<IActionResult> Login([FromBody] UserLoginDto loginUserModel)
         {
