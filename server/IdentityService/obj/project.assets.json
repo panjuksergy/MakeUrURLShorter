@@ -885,7 +885,7 @@
           }
         }
       },
-      "SparkSwim.Core/1.0.0": {
+      "UrlShortener.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -897,10 +897,10 @@
           "Microsoft.Extensions.Identity.Stores": "6.0.19"
         },
         "compile": {
-          "bin/placeholder/SparkSwim.Core.dll": {}
+          "bin/placeholder/UrlShortener.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/SparkSwim.Core.dll": {}
+          "bin/placeholder/UrlShortener.Core.dll": {}
         }
       }
     }
@@ -2232,10 +2232,10 @@
         "version.txt"
       ]
     },
-    "SparkSwim.Core/1.0.0": {
+    "UrlShortener.Core/1.0.0": {
       "type": "project",
-      "path": "../SparkSwim.Core/SparkSwim.Core.csproj",
-      "msbuildProject": "../SparkSwim.Core/SparkSwim.Core.csproj"
+      "path": "../UrlShortener.Core/UrlShortener.Core.csproj",
+      "msbuildProject": "../UrlShortener.Core/UrlShortener.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2243,7 +2243,7 @@
       "AutoMapper >= 12.0.1",
       "MediatR >= 12.1.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.19",
-      "SparkSwim.Core >= 1.0.0"
+      "UrlShortener.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2271,8 +2271,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/home/elainezirael/InforceTestTask/MakeUrURLShorter/server/SparkSwim.Core/SparkSwim.Core.csproj": {
-              "projectPath": "/home/elainezirael/InforceTestTask/MakeUrURLShorter/server/SparkSwim.Core/SparkSwim.Core.csproj"
+            "/home/elainezirael/InforceTestTask/MakeUrURLShorter/server/UrlShortener.Core/UrlShortener.Core.csproj": {
+              "projectPath": "/home/elainezirael/InforceTestTask/MakeUrURLShorter/server/UrlShortener.Core/UrlShortener.Core.csproj"
             }
           }
         }

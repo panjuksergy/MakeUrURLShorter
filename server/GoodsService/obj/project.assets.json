@@ -1235,7 +1235,7 @@
           }
         }
       },
-      "SparkSwim.Core/1.0.0": {
+      "UrlShortener.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -1247,10 +1247,10 @@
           "Microsoft.Extensions.Identity.Stores": "6.0.19"
         },
         "compile": {
-          "bin/placeholder/SparkSwim.Core.dll": {}
+          "bin/placeholder/UrlShortener.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/SparkSwim.Core.dll": {}
+          "bin/placeholder/UrlShortener.Core.dll": {}
         }
       }
     }
@@ -3296,10 +3296,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "SparkSwim.Core/1.0.0": {
+    "UrlShortener.Core/1.0.0": {
       "type": "project",
-      "path": "../SparkSwim.Core/SparkSwim.Core.csproj",
-      "msbuildProject": "../SparkSwim.Core/SparkSwim.Core.csproj"
+      "path": "../UrlShortener.Core/UrlShortener.Core.csproj",
+      "msbuildProject": "../UrlShortener.Core/UrlShortener.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3311,7 +3311,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 8.0.0-preview.6.23329.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0-preview.6.23329.4",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.0-preview.6.23329.4",
-      "SparkSwim.Core >= 1.0.0"
+      "UrlShortener.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3320,9 +3320,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/elainezirael/InforceTestTask/MakeUrURLShorter/server/GoodsService/UrlService.csproj",
-      "projectName": "UrlService",
-      "projectPath": "/home/elainezirael/InforceTestTask/MakeUrURLShorter/server/GoodsService/UrlService.csproj",
+      "projectUniqueName": "/home/elainezirael/InforceTestTask/MakeUrURLShorter/server/GoodsService/UrlShortenerService.csproj",
+      "projectName": "UrlShortenerService",
+      "projectPath": "/home/elainezirael/InforceTestTask/MakeUrURLShorter/server/GoodsService/UrlShortenerService.csproj",
       "packagesPath": "/home/elainezirael/.nuget/packages/",
       "outputPath": "/home/elainezirael/InforceTestTask/MakeUrURLShorter/server/GoodsService/obj/",
       "projectStyle": "PackageReference",
@@ -3339,8 +3339,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/home/elainezirael/InforceTestTask/MakeUrURLShorter/server/SparkSwim.Core/SparkSwim.Core.csproj": {
-              "projectPath": "/home/elainezirael/InforceTestTask/MakeUrURLShorter/server/SparkSwim.Core/SparkSwim.Core.csproj"
+            "/home/elainezirael/InforceTestTask/MakeUrURLShorter/server/UrlShortener.Core/UrlShortener.Core.csproj": {
+              "projectPath": "/home/elainezirael/InforceTestTask/MakeUrURLShorter/server/UrlShortener.Core/UrlShortener.Core.csproj"
             }
           }
         }

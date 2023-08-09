@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KJQ9SE+jjALa7y9Gg+8pTQ09V9/wBZ/XuYJtfgbJ0I9NLXA++zUulKwWB8BNkpHP+8xZ7ILmw0jPEtTbq8ipqA==",
+  "dgSpecHash": "d5+MSv+MOSM6712xuveEwzuOpfOynVtBPdLXqnayoauWkXUMo7oZ3avI8RsEXdIXPrQC1ZU9k4Efh1MMMZyBRQ==",
   "success": true,
-  "projectFilePath": "/home/elainezirael/InforceTestTask/MakeUrURLShorter/server/GoodsService/UrlService.csproj",
+  "projectFilePath": "/home/elainezirael/InforceTestTask/MakeUrURLShorter/server/GoodsService/UrlShortenerService.csproj",
   "expectedPackageFiles": [
     "/home/elainezirael/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
