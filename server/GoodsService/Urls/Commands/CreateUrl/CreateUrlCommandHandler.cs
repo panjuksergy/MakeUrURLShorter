@@ -23,7 +23,8 @@ public class CreateUrlCommandHandler : IRequestHandler<CreateUrlCommand, string>
             UrlId = Guid.NewGuid(),
             UrlFrom = request.UrlFrom,
             UrlTo = _shortener.GenerateShortUrlHash(),
-            UserId = request.UserId
+            CreationDate = DateTime.Now,
+            UserId = request.UserId,
         };
 
         await _dbContext.Urls.AddAsync(newUrl, cancellationToken);

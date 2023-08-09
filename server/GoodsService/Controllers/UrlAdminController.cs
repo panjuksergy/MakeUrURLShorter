@@ -1,39 +1,28 @@
-using AutoMapper;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SparkSwim.GoodsService.Controllers;
-using SparkSwim.GoodsService.Goods.Commands.CreateGood;
-using SparkSwim.GoodsService.Goods.Models;
-using SparkSwim.GoodsService.Products.Commands.DeleteProduct;
+
 namespace SparkSwim.GoodsService.Controllers;
-    
-[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+
+[Authorize(Roles = "Admin", AuthenticationSchemes = "Bearer")]
 public class UrlAdminController : BaseController
 {
-    private readonly IMapper _mapper;
-    public UrlAdminController(IMapper mapper) => _mapper = mapper;
-
-    #region Urls
-    [HttpPost("createUrl")]
-    public async Task<ActionResult<CreateUrlCommand>> CreateProduct([FromBody] CreateUrlDto createUrlDto)
+    [HttpGet("writeAbout/{newText}")]
+    public async Task<ActionResult<string>> WriteAbout(string newText)
     {
-        createUrlDto.UserId = UserId;
-        var command = _mapper.Map<CreateUrlCommand>(createUrlDto);
-        var productId = await Mediator.Send(command);
-        return Ok(productId);
-    }
-    
-    [HttpDelete("deleteUrl/{Id}")]
-    public async Task<ActionResult<DeleteUrlCommand>> DeleteProduct(Guid Id)
-    {
-        var command = new DeleteUrlCommand
+        string fileContents = "null";
+        string filePath = @$"{Directory.GetCurrentDirectory()}/about.txt";
+        
+        try
         {
-            UrlId = Id,
-        };
-        command.UserId = UserId;
-        await Mediator.Send(command);
-        return Ok();
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                writer.Write(newText);
+            }
+        }
+        catch (IOException e)
+        {
+            Console.WriteLine("Error while write to file, in UrlAdminController" + e.Message);
+        }
+        return fileContents;
     }
-    #endregion
 }

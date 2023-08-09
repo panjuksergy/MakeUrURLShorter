@@ -6,13 +6,13 @@ using SparkSwim.GoodsService.Products.Queries.GetProductList;
 
 namespace SparkSwim.GoodsService.Controllers;
 
-[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+[AllowAnonymous]
 public class UrlController : BaseController
 {
-    [HttpGet("getAllProducts")]
-    public async Task<ActionResult<ProductListVm>> GetAllProducts([FromBody] GetProductListQuery request)
+    [HttpPost("getAllProducts")]
+    public async Task<ActionResult<UrlListVm>> GetAllProducts([FromBody] GetUrlListQuery request)
     {
-        var query = new GetProductListQuery
+        var query = new GetUrlListQuery
         {
             // NumberFromToSkip = request.NumberFromToSkip,
             // CountToGet = request.CountToGet,
@@ -20,26 +20,28 @@ public class UrlController : BaseController
         var vm = await Mediator.Send(query);
         return Ok(vm);
     }
-
-    [HttpGet("getUrl/{Id}")]
-    public async Task<ActionResult<UrlVm>> GetUrlWithoutDetailsById(Guid Id)
+    
+    [HttpGet("getAbout")]
+    public async Task<ActionResult<string>> GetAbout()
     {
-        var query = new GetUrlQuery
+        string fileContents = "null";
+        string filePath = @$"{Directory.GetCurrentDirectory()}/about.txt";
+        try
         {
-            UrlId = Id
-        };
-        var vm = await Mediator.Send(query);
-        return Ok(vm);
-    }
+            {
+            using (StreamReader reader = new StreamReader(filePath))
+                fileContents = reader.ReadToEnd();
+            }
+        }
+        catch (IOException e)
+        {
+            Console.WriteLine("Error reading file in UrlAdminController" + e.Message);
+        }
+        
 
-    [HttpGet("details/{Id}")]
-    public async Task<ActionResult<UrlDetailsVm>> GetProductDetails(Guid Id)
-    {
-        var query = new GetUrlDetailsQuery
+        return Ok(new
         {
-            UrlId = Id,
-        };
-        var vm = await Mediator.Send(query);
-        return Ok(vm);  
+            data = fileContents
+        });
     }
 }

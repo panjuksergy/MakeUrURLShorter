@@ -5,5 +5,5 @@ namespace SparkSwim.GoodsService.Products.Queries.GetProduct;
 
 public class GetUrlQuery : IRequest<UrlVm>
 {
-    public Guid UrlId { get; set; }
+    public string UrlTo { get; set; }
 }

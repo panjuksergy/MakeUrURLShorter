@@ -1,0 +1,18 @@
+<div class="overlay">
+  <div class="overlay-content">
+    <div class="mainBlock">
+      <div class="form-outline mb-4">
+        <div class="align-content-center fw-bold fs-6 text-center" [innerHTML]="shownText"></div>
+        <input *ngIf="withInput" type="text" id="form1Example1" class="form-control" [(ngModel)]="inputData"/>
+        <!--        <label class="form-label" for="form1Example1">Enter your URL</label>-->
+      </div>
+      <!-- Submit buttons -->
+      <div class="justify-content-center ">
+        <button *ngIf="withInput" type="submit" class="btn btn-primary btn-block col-md-4" (click)="onOk(inputData)">Ok!</button>
+        <button (click)="onCloseOverlay()" type="submit" class="btn btn-primary btn-block ml-4 col-md-4">Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,34 @@
+<div class="table-container">
+  <table>
+    <thead>
+    <tr>
+      <th>URL From</th>
+      <th>URL To</th>
+      <th>Actions <button (click)="openOverlay()" *ngIf="isLoggedIn" type="button" class="action-button addnew"><fa-icon [icon]="faPlus" style="color: #000000"></fa-icon></button></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let url of urls">
+      <td><a [href]="getSafeUrl(url.urlFrom)" target="_blank">{{ url.urlFrom }}</a></td>
+      <td><a [href]="getSafeUrl(url.urlTo)" target="_blank">{{ url.urlTo }}</a></td>
+      <td class="mainButtons">
+
+      <button (click)="showUrlDetails(url.urlId)" type="button" class="action-button edit"><fa-icon [icon]="faInfo" style="color: #000000"></fa-icon></button>
+        <button (click)="deleteUrl(url.urlId)" type="button" class="action-button delete"><fa-icon [icon]="faTrash" style="color: #000000"></fa-icon></button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<app-pop-up-component
+  *ngIf="isDetailsVisible"
+  [withInput]="false"
+  [shownText]= detailsToShow
+  (closeOverlay)="handleDetailsClose()">
+</app-pop-up-component>
+<app-new-url-component (closeOverlay)="handleOverlayClose()" *ngIf="isOverlayVisible"></app-new-url-component>
+
+
+
+
+

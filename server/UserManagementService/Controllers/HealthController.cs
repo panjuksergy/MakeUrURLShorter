@@ -10,7 +10,7 @@ namespace UserManagementService.Controllers
         [HttpGet("zalupa")]
         public async Task<IActionResult> Get()
         {
-            return Ok("Я кончил бро");
+            return Ok("IM ALIVVEE");
         }
 
         [HttpGet("admincheck")]

@@ -30,20 +30,15 @@ app.Run();
 
 void RegisterServices(IServiceCollection services)
 {
+    services.AddControllers();
+
     services.AddSingleton<IShortener, DefaultShortener>();
     services.AddDbContext<IUrlDbContext, UrlDbContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
     );
-    
-    services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
-    services.AddCors(options => options.AddPolicy(name: "NgOrigins",
-        policy =>
-        {
-            policy.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
-        }));
-    
-    services.AddControllers();
 
+    services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+    
     services.AddAutoMapper(config =>
     {
         config.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));
@@ -57,12 +52,10 @@ void RegisterServices(IServiceCollection services)
 
 void Configure(IApplicationBuilder app)
 {
-    app.UseCors("NgOrigins");
+    // app.UseHttpsRedirection();
     app.UseRouting();
+    app.UseCors(_ => { _.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();});
     app.UseAuthentication();
     app.UseAuthorization();
-    app.UseHttpsRedirection();
-    app.UseCors("AllowAll");
-
     app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 }

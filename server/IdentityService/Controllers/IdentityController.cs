@@ -6,9 +6,9 @@ using SparkSwim.Core.Models;
 
 namespace IdentityService.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class IdentityController : Controller
+    // [ApiController]
+    // [Route("api/[controller]")]
+    public class IdentityController : BaseController
     {
         private readonly UserManager<AppUser> _userManager;
         private IUserIdentityRepository _userIdentityRepository;
@@ -33,5 +33,11 @@ namespace IdentityService.Controllers
                     (user.Id, user.Email, await _userManager.GetRolesAsync(user)))
                 : Unauthorized();
         }
+        [HttpGet]    
+        public async Task<IActionResult> HealthCheck()
+        {
+            return Ok("IM ALIVVEE");
+        }
+
     }
 }

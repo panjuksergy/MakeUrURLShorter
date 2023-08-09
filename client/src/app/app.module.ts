@@ -11,15 +11,31 @@ import {IdentityLoginPage} from "./components/identity-component/pages/identity-
 import {
   IdentityRegisterPage
 } from "./components/identity-component/pages/identity-register-page/identity-register.page";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {UrlTableComponent} from "./components/datatable-component/url-table.component";
 import { MainPageComponent } from './components/main-page-component/main-page.component';
-import {DataTablesModule} from "angular-datatables";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import { NavBarComponent } from './components/nav-bar-component/nav-bar.component';
+import { NewUrlComponent } from './components/new-url-component/new-url.component';
+import { PopUpComponent } from './components/pop-up-component/pop-up.component';
+import { AboutPageComponent } from './components/about-page-component/about-page.component';
+import { LogOutComponent } from './components/identity-component/pages/log-out-component/log-out.component';
+import { ContactPageComponent } from './components/contact-page-component/contact-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IdentityLoginPage,
     IdentityRegisterPage,
+    UrlTableComponent,
     MainPageComponent,
+    NavBarComponent,
+    NewUrlComponent,
+    NewUrlComponent,
+    PopUpComponent,
+    AboutPageComponent,
+    LogOutComponent,
+    ContactPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +43,8 @@ import {DataTablesModule} from "angular-datatables";
     HttpClientModule,
     NgbModule,
     FormsModule,
-    DataTablesModule,
+    BrowserAnimationsModule,
+    FontAwesomeModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

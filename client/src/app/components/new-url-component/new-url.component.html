@@ -1,0 +1,9 @@
+
+
+<app-pop-up-component
+  [withInput]="true"
+  [shownText]= textToShown
+  (closeOverlay)="onCloseOverlay()"
+  (onOkeyInput)="generateNewUrl($event)">
+</app-pop-up-component>
+

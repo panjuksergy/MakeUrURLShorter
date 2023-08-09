@@ -21,12 +21,12 @@ public class GetUrlQueryHandler : IRequestHandler<GetUrlQuery, UrlVm>
     public async Task<UrlVm> Handle(GetUrlQuery request, CancellationToken cancellationToken)
     {
         var entity =
-            await _urlDbContext.Urls.FirstOrDefaultAsync(_ => _.UrlId == request.UrlId,
+            await _urlDbContext.Urls.FirstOrDefaultAsync(_ => _.UrlTo == request.UrlTo,
                 cancellationToken);
         
-        if (entity == null || entity.UrlId != request.UrlId)
+        if (entity == null || entity.UrlTo != request.UrlTo)
         {
-            throw new NotFoundException(nameof(Url), request.UrlId);
+            throw new NotFoundException(nameof(Url), request.UrlTo);
         }
 
         return _mapper.Map<UrlVm>(entity);

@@ -1,0 +1,16 @@
+Hello esteemed reviewer,
+
+If you're reading this text, then my investment of these two days has not been in vain.
+
+So, here I should elaborate on how everything operates here, although the operation is strikingly simple to the point of elegance. Therefore, let's commence with the fundamental mechanisms.
+
+Firstly, the redirection mechanism entails the straightforward retention of the original link alongside a link bearing a randomly generated hash in the database. Essentially, when a user traverses the shortened link, they are effectively making a request to the server. The server, in turn, queries the database for the original link and promptly directs the user to the intended destination.
+
+Secondly, the author is fully aware that there might be several imperfections present.
+
+Thirdly, all requirements pertinent to this project have been duly executed.
+
+Lastly, this text is not stored within a database but rather resides in a standard text file. This singular mechanism functions outside the realms of MediatR and CQRS within this project. The rationale behind this decision is my earnest desire for this text to be perused!
+
+Yours sincerely,
+Paniuk Serhii

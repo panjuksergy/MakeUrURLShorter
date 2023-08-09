@@ -8,18 +8,18 @@ using SparkSwim.GoodsService.Products.Queries.GetProduct;
 
 namespace SparkSwim.GoodsService.Products.Queries.GetProductList;
 
-public class GetProductListQueryHandler : IRequestHandler<GetProductListQuery, ProductListVm>
+public class GetUrlListQueryHandler : IRequestHandler<GetUrlListQuery, UrlListVm>
 {
     private readonly IUrlDbContext _urlDbContext;
     private readonly IMapper _mapper;
 
-    public GetProductListQueryHandler(IUrlDbContext dbContext, IMapper mapper)
+    public GetUrlListQueryHandler(IUrlDbContext dbContext, IMapper mapper)
     {
         _urlDbContext = dbContext;
         _mapper = mapper;
     }
 
-    public async Task<ProductListVm> Handle(GetProductListQuery request, CancellationToken cancellationToken)
+    public async Task<UrlListVm> Handle(GetUrlListQuery request, CancellationToken cancellationToken)
     {
         /// If request filters is null, it will be ignored on filtering
         
@@ -29,6 +29,6 @@ public class GetProductListQueryHandler : IRequestHandler<GetProductListQuery, P
             .ProjectTo<UrlLookUpDto>(_mapper.ConfigurationProvider)
             .ToListAsync(cancellationToken);
 
-        return new ProductListVm { Urls = products };
+        return new UrlListVm { Urls = products };
     }
 }
